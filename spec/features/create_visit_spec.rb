@@ -106,6 +106,6 @@ RSpec.describe "User Creates Visit", type: :feature do
     create_visit(Date.current, Date.current + 1.days)
     FactoryGirl.create(:hosting, zipcode: '11221', max_guests: 10, host_id: User.last.id)
 
-    expect(open_last_email).to have_body_text("#{User.last.first_name} just signed up")
+    expect(open_last_email).to have_body_text("Thanks for signing up with BernieBNB!")
   end
 end
