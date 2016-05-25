@@ -23,9 +23,10 @@ RSpec.describe UserMailer, type: :mailer do
 
     @visit = Visit.create!(start_date: start_date, end_date: end_date, zipcode: '11211', num_travelers: 1, user_id: @visitor.id)
 
-    @host_data = Hosting.create!(zipcode: @visit.zipcode, max_guests: @visit.num_travelers, host_id: @host.id)
+    @hosting = Hosting.create!(zipcode: @visit.zipcode, max_guests: @visit.num_travelers, host_id: @host.id)
 
-    @email = UserMailer.new_hosts_digest(@visit, @visiter, @host_data).deliver_now
+    @email = UserMailer.new_host_email(@visit, @hosting).deliver_now
+HEH
   end
 
   it "should deliver to the correct email address" do
