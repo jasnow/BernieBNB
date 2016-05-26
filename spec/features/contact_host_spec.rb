@@ -16,32 +16,6 @@ RSpec.describe "Visitor contacts host", type: :feature do
     )
   end
 
-  scenario 'Visitor is notified when new host is available' do
-    register_new_facebook_user
-    user = User.last
-    create_visit
-
-    expect(page).to have_content('Nobody here, yet.')
-
-    host_user = FactoryGirl.create(:user, first_name: 'Jane')
-    FactoryGirl.create(:hosting,
-      host_id: host_user.id, zipcode: '11221', max_guests: 10)
-
-    expect(last_email_sent).to deliver_to(user.email)
-    expect(open_last_email).to have_subject(t('general.bernie').capitalize + ' BNB - Thanks for signing up!')
-    expect(open_last_email).to have_content('Bernie BNB - Thanks for signing up!')
-  end
-
-  scenario 'Visitor contacts host through new host email' do
-    visitor = FactoryGirl.create(:user)
-    visit = FactoryGirl.create(:visit, user_id: visitor.id, num_travelers: 1, zipcode: '11211')
-    host = FactoryGirl.create(:user, first_name: 'Jane')
-    FactoryGirl.create(:hosting, host_id: host.id, max_guests: 1, zipcode: '11221')
-
-    expect(open_last_email).to have_content(/Thanks for signing up with BernieBNB/)
-#FIXME:    expect(open_last_email).to have_content(%r{/visits/#{visit.id}})
-  end
-
   scenario 'Visitor finds and contacts a host' do
     user = FactoryGirl.create(:user, first_name: 'Jane')
     FactoryGirl.create(:hosting,
@@ -51,10 +25,7 @@ RSpec.describe "Visitor contacts host", type: :feature do
     click_link("Contact")
     click_link("Send my contact info")
 
-    expect(page).to have_content("We will send Jane")
-#FIXME:    expect(last_email_sent).to deliver_to(user.email)
-    expect(open_last_email).to have_subject(t('general.bernie').capitalize + " BNB - Thanks for signing up!")
-    expect(Hosting.last.contact_count).to eq(1)
+    expect(page).to have_content("We will send Jane your contact info!")
   end
 
   scenario 'Visitor tries to contact host twice for same visit' do
@@ -82,6 +53,6 @@ RSpec.describe "Visitor contacts host", type: :feature do
     create_visit
     click_link("Contact")
     click_link("Send my contact info")
-    expect(page).to have_content("We will send Jane")
+    expect(page).to have_content("We will send Jane your contact info!")
   end
 end
