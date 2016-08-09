@@ -33,7 +33,7 @@ gem 'jquery-ui-rails'
 gem 'haml'
 gem 'high_voltage'
 gem 'orderly'
-gem 'acts_as_paranoid', '0.5.0.rc1' # TO GET LATEST RELEASED.
+gem 'acts_as_paranoid'
 gem 'i18n-spec'
 
 gem 'puma-rails'
