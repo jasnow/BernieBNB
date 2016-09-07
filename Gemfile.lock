@@ -50,7 +50,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bower-rails (0.10.0)
-    bugsnag (5.0.0)
+    bugsnag (5.0.1)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.8.1)
@@ -347,7 +347,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
-    unicode-display_width (1.1.0)
+    unicode-display_width (1.1.1)
     validates_timeliness (4.0.2)
       timeliness (~> 0.3.7)
     validates_zipcode (0.0.12)
