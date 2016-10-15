@@ -63,7 +63,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'selenium-webdriver', '3.0.0.beta4.0'
+  gem 'selenium-webdriver'
   gem 'capybara'
   gem 'simplecov'
   gem 'webmock'
