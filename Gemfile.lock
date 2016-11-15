@@ -175,7 +175,7 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mailgun-ruby (1.1.1)
+    mailgun-ruby (1.1.2)
       rest-client (~> 2.0)
     method_source (0.8.2)
     mime-types (3.1)
@@ -229,7 +229,7 @@ GEM
     puma-rails (0.0.2)
       puma
       rack
-    rack (1.6.4)
+    rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7.1)
@@ -425,7 +425,7 @@ DEPENDENCIES
   zonebie
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.3.2p217
 
 BUNDLED WITH
    1.13.6
