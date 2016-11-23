@@ -225,7 +225,7 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     public_suffix (2.0.4)
-    puma (3.6.1)
+    puma (3.6.2)
     puma-rails (0.0.2)
       puma
       rack
@@ -337,7 +337,7 @@ GEM
     tilt (2.0.5)
     timecop (0.8.1)
     timeliness (0.3.8)
-    tins (1.12.0)
+    tins (1.13.0)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
