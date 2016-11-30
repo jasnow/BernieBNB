@@ -29,7 +29,7 @@ gem 'figaro'
 gem 'validates_timeliness'
 gem 'bcrypt'
 gem 'draper'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '5.0.5' # LOCKED DOWN
 gem 'haml'
 gem 'high_voltage'
 gem 'orderly'
