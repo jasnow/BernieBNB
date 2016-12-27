@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20160629233952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "blackout_dates", force: :cascade do |t|
-    t.date     "start_date", null: false
-    t.date     "end_date",   null: false
-    t.integer  "hosting_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "blackout_dates", ["hosting_id"], name: "index_blackout_dates_on_hosting_id", using: :btree
-
   create_table "contacts", force: :cascade do |t|
     t.integer  "hosting_id", null: false
     t.integer  "visit_id",   null: false
